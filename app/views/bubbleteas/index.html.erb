@@ -1,0 +1,93 @@
+<style media="screen">
+  body {
+    margin: 0px;
+  }
+  #banner {
+    background-color: #87d2cd;
+    padding: 6px;
+  }
+  #head {
+    color: #387f77;
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+  }
+  #sub_head {
+    color: #48a299;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  #names {
+    padding-left: 10px;
+    color: #b2515b;
+  }
+  #info {
+    padding-left: 10px;
+    color: #51b2a8;
+  }
+  #order {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border:solid 3px #b2515b;
+    padding:5px;
+    background-color: #dcefed;
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #d0969c;
+  }
+  .navbar a {
+    color: #a04851;
+    text-decoration: none;
+    float: left;
+    padding-right: 50px;
+    font-size: 20px;
+    font-family: Tahoma, sans-serif;
+    font-weight: 600;
+  }
+</style>
+
+<body>
+  <div id="banner">
+    <div id='head'>
+      <h1> <b> Influitive Bubble Tea Fridays </b> </h1>
+    </div>
+    <div id='sub_head'>
+      <h3> For those of us at Influitive who like our beverages with a side of rubbery jelly. Yum! </h4>
+    </div>
+  </div>
+</body>
+
+<div class="navbar">
+  <ul>
+      <li> <%= link_to "Add Order", new_bubbletea_path %> </li>
+      <li> <%= link_to "Order List", bubbleteas_path %> </li>
+      <li> <a href="http://www.presotea.ca/">See Menu</a> </li>
+  </ul>
+</div>
+
+<br>
+<% @bubbleteas.each do |bubbletea| %>
+<div id="order">
+  <div id="names">
+    <h3>For: <%= bubbletea.name %></h3>
+  </div>
+  <div id="info">
+  <ul>
+    <li><b>Flavour: </b><%= bubbletea.flavour %></li>
+    <li><b>Pearls/Jellies: </b><%= bubbletea.bubbles %></li>
+    <li><b>Sugar Amount: </b><%= bubbletea.sugar %></li>
+    <li><b>Ice Amount: </b><%= bubbletea.ice %></li>
+    <li><b>Extras: </b><%= bubbletea.extras %></li>
+  </ul>
+  <li>
+     <%= link_to "Delete", bubbletea_path(bubbletea),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete this?' } %>
+  </li>
+  </div>
+</div>
+<br>
+<% end %>

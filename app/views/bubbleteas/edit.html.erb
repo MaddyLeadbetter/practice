@@ -1,0 +1,88 @@
+<style media="screen">
+  #errors {
+    -moz-border-radius: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+    border:solid 3px ##890700;
+    background-color: #ffd8d6;
+    color: #bc0a00;
+  }
+
+  #form {
+    column-count: 2;
+    padding-left: 15px;
+  }
+
+  #one {
+    color: #d67e7e;
+  }
+
+  #two {
+    color: #d67e7e;
+  }
+
+  #three {
+    color: #d67e7e;
+  }
+
+  #four {
+    color: #d67e7e;
+  }
+
+  #five {
+    color: #d67e7e;
+  }
+
+  #six {
+    color: #d67e7e;
+  }
+
+  #submit_button {
+    padding-left: 330px;
+    padding-bottom: 20px;
+  }
+</style>
+
+<div id="errors">
+  <%if @article.errors%>
+      <%@article.errors.full_messages.each do |error|%>
+        <li> <%= error %> </li>
+        <% end %>
+  <% end %>
+</div> <br>
+
+<%= form_for @bubbletea do |f| %>
+  <div id="form">
+    <%= form_for @bubbletea do |f| %>
+      <div id="one">
+        <b> <%= f.label :name %> </b>
+      </div> <br>
+      <%= f.text_field :name %> <br> <br>
+
+      <div id="two">
+        <b> <%= f.label :flavour %> </b>
+      </div> <br>
+      <%= f.text_field :flavour %> <br> <br>
+
+      <div id="three">
+        <b><%= f.label :bubbles %> </b>
+      </div> <br>
+      <%= f.text_field :bubbles %> <br> <br>
+
+      <div id="four">
+        <b> <%= f.label :sugar %> </b>
+      </div> <br>
+      <%= f.text_field :sugar %> <br> <br>
+
+      <div id="five">
+        <b> <%= f.label :ice %> </b>
+      </div> <br>
+      <%= f.text_field :ice %> <br> <br>
+
+      <div id="six">
+        <b> <%= f.label :extras %> </b>
+      </div> <br>
+      <%= f.text_field :extras %> <br>
+
+    </div> <br>
+<% end %>

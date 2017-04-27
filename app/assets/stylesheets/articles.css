@@ -1,0 +1,97 @@
+body {
+  margin: 0px;
+}
+div.navbar ul{
+  margin: 0px;
+  padding: 0px;
+  background-color: #16151c;
+  list-style-type: none;
+  overflow: hidden;
+}
+.nav1 a, .nav2 a, .nav3 a, .nav4 a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: helvetica;
+  float: left;
+}
+.nav1 a:hover, .nav2 a:hover, .nav3 a:hover, .nav4 a:hover{
+  background-color: #5b6584;
+}
+
+ div.category ul{
+  margin-left: 15px;
+  margin-bottom: 0;
+  padding: 0px;
+  list-style-type: none;
+  overflow: hidden;
+}
+.cat_name li{
+  display: inline;
+  color: white;
+  background-color: #5b6584;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 550;
+  font-family: helvetica;
+  float: left;
+  margin-right: 5px;
+  font-size: 10px;
+  padding: 7px;
+  border-radius: 17px;
+}
+.article_title h1{
+  color: black;
+  font-family: Georgia, serif;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+.article_title a{
+  margin-left: 0px;
+}
+.article_body {
+  margin-left: 15px;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page {
+  display: flex;
+}
+.main a{
+  text-decoration: none;
+}
+.main {
+  flex: 5;
+}
+div.links ul{
+  display: inline;
+  margin-left: 5px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+  padding: 0px;
+  list-style-type: none;
+  overflow: hidden;
+}
+div.links {
+  margin-left: 15px;
+}
+.view_art a, .edit_art a{
+  padding-right: 20px;
+  margin-top: 0;
+  color: black;
+  float: left;
+}
+.sidebar {
+  flex: 2;
+  background-color: #e7e7e7;
+  margin-right: 15px;
+  padding-left: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}

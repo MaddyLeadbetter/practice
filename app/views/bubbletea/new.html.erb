@@ -1,0 +1,24 @@
+<style media="screen">
+  #instructions {
+    color: #b2515b;
+  }
+</style>
+
+<div id="instructions">
+  <h3>Enter your order below.  You can't edit your order (currently) once you submit, so think carefully!</h3>
+</div>
+<%= form_for @bubbletea do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br> <br>
+  <%= f.label :flavour %> <br>
+  <%= f.text_field :flavour %> <br> <br>
+  <%= f.label :bubbles %> <br>
+  <%= f.text_field :bubbles %> <br> <br>
+  <%= f.label :sugar %> <br>
+  <%= f.text_field :sugar %> <br> <br>
+  <%= f.label :ice %> <br>
+  <%= f.text_field :ice %> <br> <br>
+  <%= f.label :extras %> <br>
+  <%= f.text_field :extras %>
+  <%= f.submit "Submit Order" %>
+<% end %>

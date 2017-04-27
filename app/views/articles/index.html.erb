@@ -1,0 +1,66 @@
+<div class="navbar">
+  <ul>
+    <div class="nav1">
+      <li> <%= link_to "New Article", new_article_path %> </li>
+    </div>
+    <div class="nav2">
+      <li> <%= link_to "New Category", new_category_path %> </li>
+    </div>
+    <div class="nav3">
+      <li> <%= link_to "View Articles", articles_path %> </li>
+    </div>
+    <div class="nav4">
+      <li> <%= link_to "View Categories", categories_path %> </li>
+    </div>
+  </ul>
+</div> <br>
+
+<div class="page">
+  <div class="main">
+    <% @articles.each do |article| %>
+      <div class="category">
+        <ul>
+          <% article.categories.each do |cat| %>
+            <div class="cat_name"> <li> <%= cat.name %> </li> </div>
+          <% end %>
+        </ul>
+      </div>
+      <div class="article_title">
+        <%= link_to article_path(article) do %>
+          <h1><%= article.title %></h1>
+        <% end %>
+      </div>
+
+      <div class="article_body">
+        <%= article.body %>
+      </div>
+
+      <div class="links">
+        <ul>
+          <div class="view_art">
+            <li> <%= link_to "View Article", article_path(article) %> </li>
+          </div>
+          <div class="edit_art">
+            <li> <%= link_to "Edit Article", edit_article_path(article) %> </li>
+          </div>
+        </ul>
+      </div> <br>
+    <% end %>
+  </div>
+
+  <div class="sidebar">
+    <div class="cat_title">
+      <h1> Categories: </h1>
+    </div>
+    <div class="cat_list">
+      <ul>
+        <% @categories.each do |category| %>
+          <div class="cat">
+            <li><h3><%= category.name %></h3></li>
+          </div> <br>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>

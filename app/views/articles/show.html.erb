@@ -1,0 +1,23 @@
+<%= link_to "Back", articles_path %>
+<h1><%= @article.title %></h1>
+<% @article.categories.each do |c| %>
+  <b>
+    <%= c.name %> <br>
+  </b>
+<% end %>
+<p><%= @article.body %></p>
+<br> <br>
+
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit "Create Comment" %>
+<% end %>
+
+<h2> Comments </h2>
+<% @article.comments.reverse.each do |comm| %>
+  <div>
+    <%= comm.body %>
+  </div> <br>
+<% end %>

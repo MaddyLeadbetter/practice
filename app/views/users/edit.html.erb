@@ -1,0 +1,26 @@
+<% if  @user.errors %>
+    <% @user.errors.full_messages.each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+<% end %>
+
+<!-- <form action="/update_user" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name" value="<%= @user.name %>"> <br> <br>
+
+  <label for="email">Email:</label> <br>
+  <textarea type="text" name="email" value=""><%= @user.email %></textarea> <br> <br>
+
+  <input type="hidden" name="id" value="<%= @user.id %>">
+  <input type="submit" value="Update User">
+</form> -->
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :title %> <br> <br>
+  
+  <%= f.label :email %> <br>
+  <%= f.text_field :email %> <br> <br>
+
+  <%= f.submit "Update User" %>
+<% end %>

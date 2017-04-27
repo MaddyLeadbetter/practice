@@ -1,0 +1,25 @@
+<% if @user && @user.errors %>
+  <% @user.errors.full_messages.each do |err| %>
+      <li> <%= err %> </li>
+  <% end %>
+<% end %>
+
+<!-- Practice form -->
+<!-- <form action="create_user" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name"> <br> <br>
+
+  <label for="email">Email: </label>
+  <input type="text" name="email"> <br><br>
+
+  <input type="submit" value="Add User">
+</form> -->
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_area :email %>
+  <%= f.submit "Create User" %>
+<% end %>

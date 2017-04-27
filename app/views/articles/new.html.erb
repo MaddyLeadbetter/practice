@@ -1,0 +1,30 @@
+<%= link_to "Back", articles_path %>
+<% if @article.errors %>
+  <% @article.errors.full_messages.each do |err| %>
+      <li> <%= err %> </li>
+  <% end %>
+<% end %>
+
+<!-- Practice form -->
+<!-- <form action="/articles" method="post">
+  <label for="title">Title:</label>
+  <input type="text" name="title"> <br> <br>
+
+<label for="body">Body: </label>
+  <input type="text" name="body"> <br><br>
+
+  <input type="submit" value="Create Article">
+</form> -->
+
+
+<%= form_for @article do |f| %>
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %> <br> <br>
+
+  <%= f.label :body %> <br>
+  <%= f.text_area :body %> <br> <br>
+
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, label: "Choose Category"%>
+  <br><br>
+  <%= f.submit "Create Article" %>
+<% end %>
